@@ -1,0 +1,56 @@
+﻿<Window x:Class="ProjetoERP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProjetoERP"
+        xmlns:av="http://schemas.microsoft.com/expression/blend/2008" 
+        mc:Ignorable="d"
+        Title="ProjetoERP" Height="450" Width="866" Icon="/erp.ico" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="0" Margin="10">
+            <Label Content="Descrição:"/>
+            <TextBox x:Name="txtDescricao" Width="200" Height="25"/>
+            <Label Content="Quantidade:" Margin="10,0,0,0"/>
+            <TextBox x:Name="txtQuantidade" Width="66" Margin="5,0,0,0" Height="25"/>
+            <Label Content="Preço BRL:" Margin="10,0,0,0"/>
+            <TextBox x:Name="txtPreco" Width="100" Margin="5,0,0,0" Height="25"/>
+            <Button Content="Adicionar" Click="Adicionar_Click" Margin="10,0,0,0" Width="50" Height="25"/>
+            <Button Content="Excluir" Click="Excluir_Click" Margin="10,0,0,0" Width="50" Height="25"/>
+            <Button Content="Editar" Click="Editar_Click" RenderTransformOrigin="2.045,0.541" Margin="10,0,0,0" Width="50" Height="25"/>
+        </StackPanel>
+
+        <ListView x:Name="lvProdutos" Grid.Row="1" Margin="10" ItemsSource="{Binding Produtos}" SelectionChanged="lvProdutos_SelectionChanged" av:ItemsSource="{av:SampleData ItemCount=5}">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Descrição" Width="100" DisplayMemberBinding="{Binding Descricao}"/>
+                    <GridViewColumn Header="Quantidade" Width="100" DisplayMemberBinding="{Binding Quantidade}"/>
+                    <GridViewColumn Header="Preço" Width="100" DisplayMemberBinding="{Binding Preco}"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <StackPanel Orientation="Horizontal" Grid.Row="2" Margin="10">
+            <Label Content="Desconto (%):"/>
+            <TextBox x:Name="txtDesconto" Width="50" Margin="5,0,0,0" Height="25"/>
+            <Button Content="Aplicar Desconto" Click="AplicarDesconto_Click" Margin="10,0,0,0" Height="25"/>
+            <ComboBox x:Name="cbMoeda" Width="100" Margin="10,0,0,0" SelectionChanged="cbMoeda_SelectionChanged" Height="25">
+                <ComboBoxItem Content="BRL"/>
+                <ComboBoxItem Content="USD"/>
+                <ComboBoxItem Content="EUR"/>
+                <ComboBoxItem Content="ARS"/>
+            </ComboBox>
+            <TextBlock x:Name="txtValorMoeda" Margin="20,0,0,0"/>
+            <TextBlock x:Name="txtTotal" Margin="20,0,0,0"/>
+            <TextBlock x:Name="txtQuantidadeTotal" Margin="20,0,0,0"/>
+            <TextBlock x:Name="txtVolumeTotal" Margin="20,0,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>
