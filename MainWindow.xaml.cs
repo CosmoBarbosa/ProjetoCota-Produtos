@@ -140,7 +140,8 @@ namespace ProjetoERP
         private void AplicarDesconto_Click(object sender, RoutedEventArgs e)
         {
             CalcularTotais();
-            
+            txtDesconto.Text = string.Empty;
+
         }
 
         private void CalcularTotais()
@@ -199,6 +200,7 @@ namespace ProjetoERP
             txtDescricao.Text = string.Empty;
             txtQuantidade.Text = string.Empty;
             txtPreco.Text = string.Empty;
+            
         }
 
         private void cbMoeda_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
@@ -230,6 +232,8 @@ namespace ProjetoERP
             {
                 frete = fret;
                 CalcularTotais();
+                txtFrete.Text = string.Empty;
+                
             }
             else
             {
