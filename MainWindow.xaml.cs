@@ -45,6 +45,18 @@ namespace ProjetoERP
             InitializeComponent();
             DataContext = this; // Defina o DataContext como esta instância da janela
             CarregarDados();
+            Produtos.Add(new Produto{Descricao = "Iphone 11 Pro",Quantidade = 10,Preco = 3599});
+            Produtos.Add(new Produto { Descricao = "Notebook Acer Nitro 5", Quantidade = 5, Preco = 3000 });
+            Produtos.Add(new Produto { Descricao = "Iphone 12 Pro", Quantidade = 10, Preco = 3599 });
+            Produtos.Add(new Produto { Descricao = "Iphone 13 Pro", Quantidade = 10, Preco = 3599 });
+            Produtos.Add(new Produto { Descricao = "Iphone 14 Pro", Quantidade = 10, Preco = 3599 });
+            Produtos.Add(new Produto { Descricao = "Iphone 15 Pro", Quantidade = 10, Preco = 3599 });
+            Produtos.Add(new Produto { Descricao = "Iphone 11 ProMax", Quantidade = 10, Preco = 2599 });
+            Produtos.Add(new Produto { Descricao = "Iphone 12 ProMax", Quantidade = 10, Preco = 3599 });
+            Produtos.Add(new Produto { Descricao = "Iphone 13 ProMax", Quantidade = 10, Preco = 3599 });
+            Produtos.Add(new Produto { Descricao = "Iphone 14 ProMax", Quantidade = 10, Preco = 3599 });
+
+
         }
 
         private async void CarregarDados()

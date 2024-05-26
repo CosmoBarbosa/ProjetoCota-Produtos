@@ -30,7 +30,7 @@
         <ListView x:Name="lvProdutos" Grid.Row="1" Margin="10" ItemsSource="{Binding Produtos}" SelectionChanged="lvProdutos_SelectionChanged" Background="#FF8E8E8E" BorderBrush="Black" Foreground="Black" d:ItemsSource="{d:SampleData ItemCount=5}" IsSynchronizedWithCurrentItem="True" >
             <ListView.View>
                 <GridView>
-                    <GridViewColumn Header="Descrição" Width="100" DisplayMemberBinding="{Binding Descricao}"/>
+                    <GridViewColumn Header="Descrição" Width="500" DisplayMemberBinding="{Binding Descricao}"/>
                     <GridViewColumn Header="Quantidade" Width="100" DisplayMemberBinding="{Binding Quantidade}"/>
                     <GridViewColumn Header="Preço" Width="100" DisplayMemberBinding="{Binding Preco}"/>
                 </GridView>
