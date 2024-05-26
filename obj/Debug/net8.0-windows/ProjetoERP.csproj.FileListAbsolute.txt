@@ -8,7 +8,6 @@ C:\Users\PC\Documents\ProjetoERP\bin\Debug\net8.0-windows\ProjetoERP.dll
 C:\Users\PC\Documents\ProjetoERP\bin\Debug\net8.0-windows\ProjetoERP.pdb
 C:\Users\PC\Documents\ProjetoERP\bin\Debug\net8.0-windows\Newtonsoft.Json.dll
 C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\MainWindow.g.cs
-C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\ProjetoERP_MarkupCompile.lref
 C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\MainWindow.baml
 C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\ProjetoERP.g.resources
 C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\ProjetoERP.GeneratedMSBuildEditorConfig.editorconfig
@@ -21,3 +20,4 @@ C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\refint\ProjetoERP.dll
 C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\ProjetoERP.pdb
 C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\ProjetoERP.genruntimeconfig.cache
 C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\ref\ProjetoERP.dll
+C:\Users\PC\Documents\ProjetoERP\obj\Debug\net8.0-windows\ProjetoERP.sourcelink.json

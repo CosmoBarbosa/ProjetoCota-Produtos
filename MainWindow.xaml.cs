@@ -23,7 +23,7 @@ namespace ProjetoERP
         public event PropertyChangedEventHandler PropertyChanged;
 
         private ObservableCollection<Produto> _produtos = new ObservableCollection<Produto>();
-
+        private decimal frete;
         private decimal _usdRate;
         private decimal _eurRate;
         private decimal _arsRate;
@@ -129,6 +129,7 @@ namespace ProjetoERP
                 var produtoSelecionado = (Produto)lvProdutos.SelectedItem;
                 Produtos.Remove(produtoSelecionado);
                 CalcularTotais();
+                
             }
             else
             {
@@ -139,6 +140,7 @@ namespace ProjetoERP
         private void AplicarDesconto_Click(object sender, RoutedEventArgs e)
         {
             CalcularTotais();
+            
         }
 
         private void CalcularTotais()
@@ -161,10 +163,31 @@ namespace ProjetoERP
             // Converter para a moeda selecionada
             decimal totalEmMoeda = total / _selectedRate;
 
-            txtTotal.Text = $"Total: {totalEmMoeda:N2}";
+            txtTotal.Text = $"Total: {totalEmMoeda+frete:N2}";
             txtQuantidadeTotal.Text = $"Quantidade Total: {quantidadeTotal}";
-            txtVolumeTotal.Text = $"Volume Total: {total:N2} BRL";
+            txtVolumeTotal.Text = $"Volume Total: {total+frete:N2} BRL";
+            CalcularImpostos(total+frete);
         }
+
+        private void CalcularImpostos(decimal i)
+        {
+            decimal imposto = 0;
+            decimal totalImpostos = 0;
+            decimal aliquotaImportacao = 0;
+
+            // Exemplo de cálculo de impostos fictícios
+            foreach (var produto in Produtos)
+            {
+                imposto += produto.Preco * 0.1m; // 10% do preço como imposto
+                totalImpostos += produto.Preco * 0.15m; // 15% do preço como total de impostos
+                aliquotaImportacao += produto.Preco * 0.92m; // 92% do preço como alíquota de importação
+            }
+
+            // Atualize os valores nos elementos visuais correspondentes
+            txtAliquotaImportacao.Text = $"92%";
+            txtTotalDosItens.Text = $"{ aliquotaImportacao + i:N2} BRL";
+        }
+
 
         private void lvProdutos_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
@@ -200,6 +223,22 @@ namespace ProjetoERP
                 }
             }
         }
+       
+        private void AplicarFrete_Click(object sender, RoutedEventArgs e)
+        {
+            if (decimal.TryParse(txtFrete.Text, out decimal fret))
+            {
+                frete = fret;
+                CalcularTotais();
+            }
+            else
+            {
+                // Se a conversão falhar, você pode lidar com isso aqui
+            }
+        }
+
+
+
     }
 
     public class Produto
